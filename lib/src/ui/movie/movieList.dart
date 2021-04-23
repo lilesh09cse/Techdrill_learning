@@ -2,6 +2,7 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:drill_app/src/resources/api/config.dart';
 import 'package:flutter/material.dart';
 import 'package:drill_app/src/bloc/bloc.movieData.dart';
 import 'package:drill_app/src/model/model.movieData.dart';
@@ -122,7 +123,7 @@ class _MovieListState extends State<MovieList> {
             width: Constants.screenSize(context).width * 0.28,
             height: Constants.screenSize(context).height * 0.2,
             placeholder: (context, url) => Container(color: Colors.grey[900]),
-            imageUrl: "https://image.tmdb.org/t/p/original/" + url,
+            imageUrl: ApiConfig().imageUrl + url,
             fit: BoxFit.cover,
             fadeInCurve: Curves.easeIn,
             fadeInDuration: Duration(microseconds: 1000),
