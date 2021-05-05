@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:drill_app/src/resources/api/config.dart';
+import 'package:drill_app/src/ui/portfolio/portfoilio_page.dart';
 import 'package:flutter/material.dart';
 import 'package:drill_app/src/bloc/bloc.movieData.dart';
 import 'package:drill_app/src/model/model.movieData.dart';
@@ -47,6 +48,21 @@ class _MovieListState extends State<MovieList> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.white54,
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                    PortfolioPage()), //here the MyImage is the dart class where on pressed it will route
+          );
+        },
+        child: Icon(
+          Icons.contact_page,
+          color: Colors.black,
+        ),
+      ),
       body: StreamBuilder(
           stream: widget.allMovieBloc.allMovieStream,
           builder:

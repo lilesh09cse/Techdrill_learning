@@ -6,11 +6,12 @@ import 'package:drill_app/src/app.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
+  //preferred orientation: eg Instagram
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
-
+  //overlay style : battery indicatr
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
